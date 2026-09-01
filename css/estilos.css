@@ -1,0 +1,145 @@
+:root {
+  --color-primario: #7A2E2E;   /* rojo caoba - header, botones principales */
+  --color-acento: #D9A441;     /* ambar dorado - hover, detalles */
+  --color-fondo: #FAF6EF;      /* crema - fondo de pagina */
+  --color-texto: #2B2724;      /* gris carbon calido - texto principal */
+  --color-exito: #5C7A4F;        /* verde oliva - mensajes de exito */
+  --color-error: #B33A2E;      /* rojo oxido - errores de validacion */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6; 
+}
+
+/* ===== HEADER Y NAVEGACION ===== */
+header {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--color-acento);
+}
+
+.carrito-icono {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+main {
+  max-width: 1100px;
+  margin: 0 auto; 
+  padding: 2rem;
+}
+
+.hero {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== GRILLA DE PRODUCTOS ===== */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.producto-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s; 
+}
+
+.producto-card:hover {
+  transform: translateY(-4px);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.producto-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.producto-card .precio {
+  color: var(--color-primario);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.boton {
+  background-color: var(--color-acento);
+  color: var(--color-texto);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.boton:hover {
+  opacity: 0.9;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--color-texto);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
