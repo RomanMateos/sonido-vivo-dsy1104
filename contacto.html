@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonido Vivo | Tienda de Instrumentos Musicales</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo"> Sonido Vivo</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        <li><a href="login.html">Iniciar sesion</a></li>
+        <li><a href="signup.html">Registrarse</a></li>
+      </ul>
+    </nav>
+    <a href="carrito.html" class="carrito-icono"> Carrito</a>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Sonido Vivo</h1>
+      <p>11 años equipando a musicos de Viña del Mar y todo Chile. Guitarras, bajos, baterias, teclados y mas.</p>
+    </section>
+    <section>
+      <h2>Contacto</h2>
+    </section>
+
+    <p>Completa el siguiente formulario para que el personal de Sonido Vivo se contacte contigo a la brevedad.</p>
+  </header>
+
+  <form class="formulario" action="confirmacion.html" method="get">
+    <fieldset>
+      <legend>Datos de contacto</legend>
+
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" name="nombre" type="text"
+             autocomplete="name" minlength="3" maxlength="80" required>
+
+      <label for="correo">Correo electrónico</label>
+      <input id="correo" name="correo" type="email"
+             autocomplete="email" required>
+
+      <label for="telefono">Teléfono</label>
+      <input id="telefono" name="telefono" type="tel"
+             autocomplete="tel" placeholder="912345678"
+             pattern="[0-9]{9}" title="Ingresa 9 dígitos" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Asunto</legend>
+
+      <label for="area">Área de solicitud</label>
+      <select id="actividad" name="actividad" required>
+        <option value="">Selecciona un área</option>
+        <option value="cotizacion">Cotización</option>
+        <option value="seguimiento">Seguimiento de compra</option>
+        <option value="postventa">Postventa</option>
+        <option value="reparaciones">Reparaciones</option>
+      </select>
+
+      <p>Forma de contacto</p>
+      <label><input type="radio" name="modalidad"
+                    value="telefono" required> Teléfono</label>
+      <label><input type="radio" name="modalidad"
+                    value="email"> E-mail</label>
+
+      <label for="motivacion">Redacta tu solicitud</label>
+      <textarea id="motivacion" name="motivacion"
+                rows="5" minlength="20" maxlength="500" required></textarea>
+    </fieldset>
+
+    <label>
+      <input type="checkbox" name="acepta_condiciones" required>
+      Autorizo al personal de Sonico Vivo a contactarse conmigo.
+    </label>
+
+    <button type="submit">Enviar solicitud de Contacto</button>
+  </form>
+
+
+  </main>
+  <footer>
+    <p>&copy; 2026 Sonido Vivo - Viña del Mar, Region de Valparaiso</p>
+  </footer>
+  <script src="js/contacto.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
