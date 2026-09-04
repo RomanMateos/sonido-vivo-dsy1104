@@ -25,16 +25,27 @@ body {
 /* ===== ACCESIBILIDAD: SKIP LINK ===== */
 .salto-contenido {
   position: absolute;
-  left: -9999px;
+  padding: 0.75rem 1.5rem;
   background-color: var(--color-primario);
   color: white;
-  padding: 0.75rem 1.5rem;
+  transform: translateY(-150%);
   z-index: 100;
 }
  
 .salto-contenido:focus {
-  left: 1rem;
-  top: 1rem;
+  transform: translateY(0);
+}
+ 
+/* ===== ESTADOS DE FOCO Y FORMULARIOS (Guia 4, seccion 10) ===== */
+:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 3px;
+}
+ 
+input:required,
+select:required,
+textarea:required {
+  border-left: 0.3rem solid var(--color-primario);
 }
  
 /* ===== HEADER Y NAVEGACION ===== */
@@ -164,3 +175,4 @@ footer {
   padding: 1.5rem;
   margin-top: 3rem;
 }
+ 
