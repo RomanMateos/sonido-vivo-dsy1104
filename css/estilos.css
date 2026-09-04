@@ -1,12 +1,14 @@
 :root {
-  --color-primario: #7A2E2E;   
-  --color-acento: #D9A441;     
-  --color-fondo: #FAF6EF;      
-  --color-texto: #2B2724;      
-  --color-exito: #5C7A4F;      
-  --color-error: #B33A2E; 
-}    
-
+  --color-primario: #7A2E2E;   /* rojo caoba - header, botones principales */
+  --color-acento: #D9A441;     /* ambar dorado - hover, detalles */
+  --color-fondo: #FAF6EF;      /* crema - fondo de pagina */
+  --color-texto: #2B2724;      /* gris carbon calido - texto principal */
+  --color-exito: #5C7A4F;      /* verde oliva - mensajes de exito */
+  --color-error: #B33A2E;      /* rojo oxido - errores de validacion */
+}
+ 
+/* Reset basico: quitamos margenes/paddings por defecto del navegador
+   para tener control total del espaciado nosotros mismos */
 * {
   margin: 0;
   padding: 0;
@@ -113,6 +115,11 @@ main {
  
 .producto-card:hover {
   transform: translateY(-4px);
+}
+ 
+.producto-card a {
+  text-decoration: none;
+  color: inherit;
 }
  
 .producto-card img {
