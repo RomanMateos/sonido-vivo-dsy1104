@@ -1,8 +1,11 @@
-const contenedorDestacados = document.querySelector("#contenedor-destacados");
+const contenedorProductos = document.querySelector("#contenedor-productos");
  
 for (const producto of productos) {
   const tarjeta = document.createElement("div");
   tarjeta.classList.add("producto-card");
+ 
+  const enlace = document.createElement("a");
+  enlace.href = "detalle-producto.html?codigo=" + producto.codigo;
  
   const imagen = document.createElement("img");
   imagen.src = producto.imagen;
@@ -14,14 +17,24 @@ for (const producto of productos) {
   const nombre = document.createElement("h3");
   nombre.textContent = producto.nombre;
  
+  enlace.appendChild(imagen);
+  enlace.appendChild(nombre);
+ 
   const precio = document.createElement("p");
   precio.classList.add("precio");
   precio.textContent = "$" + producto.precio.toLocaleString("es-CL");
  
-  tarjeta.appendChild(imagen);
-  tarjeta.appendChild(nombre);
-  tarjeta.appendChild(precio);
+  const boton = document.createElement("button");
+  boton.classList.add("boton");
+  boton.textContent = "Agregar al carrito";
+  boton.addEventListener("click", function () {
+    agregarAlCarrito(producto.codigo);
+  });
  
-  contenedorDestacados.appendChild(tarjeta);
+  tarjeta.appendChild(enlace);
+  tarjeta.appendChild(precio);
+  tarjeta.appendChild(boton);
+ 
+  contenedorProductos.appendChild(tarjeta);
 }
  
