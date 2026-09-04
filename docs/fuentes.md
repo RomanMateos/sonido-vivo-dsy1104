@@ -12,7 +12,7 @@ Registro de origen de cada imagen usada en el proyecto, para dejar constancia de
 | BA001 | Bajo Eléctrico 4 Cuerdas | https://www.pexels.com/es-es/foto/acercamiento-de-las-cuerdas-de-una-guitarra-bajo-electrica-de-madera-34858887/ | Román |
 | BT001 | Batería Acústica 5 piezas | https://www.pexels.com/es-es/foto/bateria-amarilla-en-espacio-interior-contemporaneo-37578955/ | Román |
 | TC001 | Teclado Digital 61 teclas | https://www.pexels.com/es-es/foto/pianos-electricos-en-blanco-y-negro-10618242/ | Román |
-| MI001 | Micrófono Dinámico Cardioide | *pendiente | https://www.pexels.com/es-es/foto/microfono-profesional-sobre-soporte-33923585/ | Román |
+| MI001 | Micrófono Dinámico Cardioide | https://www.pexels.com/es-es/foto/microfono-profesional-sobre-soporte-33923585/  | Román |
  
 ## Otras imágenes (blogs, institucional, íconos)
  
