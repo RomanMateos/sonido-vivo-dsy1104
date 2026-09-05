@@ -9,6 +9,10 @@ function obtenerCarrito() {
   return JSON.parse(carritoGuardado);
 }
  
+function guardarCarrito(carrito) {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+ 
 function quitarDelCarrito(codigo) {
   const carrito = obtenerCarrito();
   const carritoActualizado = [];
@@ -19,7 +23,42 @@ function quitarDelCarrito(codigo) {
     }
   }
  
-  localStorage.setItem("carrito", JSON.stringify(carritoActualizado));
+  guardarCarrito(carritoActualizado);
+  renderizarCarrito();
+}
+ 
+function incrementarCantidad(codigo) {
+  const carrito = obtenerCarrito();
+ 
+  for (const item of carrito) {
+    if (item.codigo === codigo) {
+      item.cantidad = item.cantidad + 1;
+    }
+  }
+ 
+  guardarCarrito(carrito);
+  renderizarCarrito();
+}
+ 
+function decrementarCantidad(codigo) {
+  const carrito = obtenerCarrito();
+ 
+  for (const item of carrito) {
+    if (item.codigo === codigo) {
+      item.cantidad = item.cantidad - 1;
+    }
+  }
+ 
+  if (carrito.length > 0) {
+    for (const item of carrito) {
+      if (item.codigo === codigo && item.cantidad <= 0) {
+        quitarDelCarrito(codigo);
+        return;
+      }
+    }
+  }
+ 
+  guardarCarrito(carrito);
   renderizarCarrito();
 }
  
@@ -46,8 +85,28 @@ function renderizarCarrito() {
     const nombre = document.createElement("h3");
     nombre.textContent = item.nombre;
  
-    const cantidad = document.createElement("p");
-    cantidad.textContent = "Cantidad: " + item.cantidad;
+    const controles = document.createElement("div");
+ 
+    const botonMenos = document.createElement("button");
+    botonMenos.classList.add("boton");
+    botonMenos.textContent = "-";
+    botonMenos.addEventListener("click", function () {
+      decrementarCantidad(item.codigo);
+    });
+ 
+    const cantidad = document.createElement("span");
+    cantidad.textContent = " " + item.cantidad + " ";
+ 
+    const botonMas = document.createElement("button");
+    botonMas.classList.add("boton");
+    botonMas.textContent = "+";
+    botonMas.addEventListener("click", function () {
+      incrementarCantidad(item.codigo);
+    });
+ 
+    controles.appendChild(botonMenos);
+    controles.appendChild(cantidad);
+    controles.appendChild(botonMas);
  
     const subtotal = document.createElement("p");
     subtotal.classList.add("precio");
@@ -61,7 +120,7 @@ function renderizarCarrito() {
     });
  
     fila.appendChild(nombre);
-    fila.appendChild(cantidad);
+    fila.appendChild(controles);
     fila.appendChild(subtotal);
     fila.appendChild(botonQuitar);
  
