@@ -3,58 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sonido Vivo | Tienda de Instrumentos Musicales</title>
-  <link rel="stylesheet" href="css/estilos.css">
+  <meta name="description" content="Conoce la historia y los valores de Sonido Vivo, tu tienda de instrumentos musicales en Viña del Mar.">
+  <title>Nosotros | Sonido Vivo</title>
+  <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
+
+  <!-- Accesibilidad: Salto al contenido -->
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
   <header>
-    <a href="index.html" class="logo"> Sonido Vivo</a>
-    <nav>
+    <a href="index.html" class="logo">🎸 Sonido Vivo</a>
+    <nav aria-label="Navegación principal">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="productos.html">Productos</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="blogs.html">Blogs</a></li>
+        <!-- aria-current indica la página activa -->
+        <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="login.html">Iniciar sesion</a></li>
       </ul>
     </nav>
-    <a href="carrito.html" class="carrito-icono"> Carrito</a>
+    <a href="carrito.html" class="carrito-icono">🛒 Carrito</a>
   </header>
-<main>
+
+  <main id="contenido-principal">
+    
     <!-- Sección de Introducción / Historia -->
-    <section class="nosotros-hero">
+    <!-- Reutilizamos la clase "hero" del index -->
+    <section class="hero nosotros-hero">
       <h1>Nuestra Historia</h1>
+      <img src="assets/img/nosotros/nosotros1.jpg" alt="Fachada de la tienda Sonido Vivo en Viña del Mar" class="img-fluida">
       <p>Nacimos hace 11 años en el corazón de Viña del Mar con una sola misión: equipar a los músicos de la Región de Valparaíso y de todo Chile con los mejores instrumentos y equipos de audio.</p>
     </section>
 
     <!-- Sección de Valores utilizando <article> semánticos -->
     <section class="nosotros-valores">
-      <h2>Nuestros Pilares</h2>
-      <div class="valores-grid">
+      <h2 style="margin-bottom: 1.5rem;">Nuestros Pilares</h2>
+      
+      <!-- Reutilizamos la grilla del index -->
+      <div class="productos-grid">
         
-        <article class="valor-card">
+        <!-- Reutilizamos las tarjetas del index para mantener la consistencia -->
+        <article class="producto-card">
+          <img src="assets/img/nosotros/nosotros2.jpg" alt="Asesoría musical">
           <h3>Experiencia</h3>
           <p>Más de una década asesorando a bandas, productoras y músicos independientes para ayudarles a encontrar su sonido ideal.</p>
         </article>
 
-        <article class="valor-card">
+        <article class="producto-card">
+          <img src="assets/img/nosotros/nosotros3.jpg" alt="Equipos de alta calidad">
           <h3>Calidad Garantizada</h3>
-          <p>Trabajamos exclusivamente con marcas reconocidas a nivel mundial, asegurando durabilidad, fidelidad y un rendimiento óptimo en cada equipo.</p>
+          <p>Trabajamos exclusivamente con marcas reconocidas a nivel mundial, asegurando durabilidad, fidelidad y un rendimiento óptimo.</p>
         </article>
 
-        <article class="valor-card">
-          <h3>Soporte Técnico Especializado</h3>
-          <p>No solo somos una tienda; te acompañamos en la postventa con un equipo de músicos y técnicos expertos listos para resolver cualquier duda.</p>
+        <article class="producto-card">
+          <img src="assets/img/nosotros/nosotros4.jpg" alt="Servicio técnico reparando guitarra">
+          <h3>Soporte Técnico</h3>
+          <p>No solo somos una tienda; te acompañamos en la postventa con un equipo de expertos listos para resolver cualquier duda.</p>
         </article>
 
       </div>
     </section>
   </main>
+
   <footer>
-    <p>&copy; 2026 Sonido Vivo - Viña del Mar, Region de Valparaiso</p>
+    <address> 2026 Sonido Vivo - Viña del Mar, Región de Valparaíso</address>
   </footer>
-  <script src="js/productos-data.js"></script>
-  <script src="js/home.js"></script>
+
 </body>
 </html>

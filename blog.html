@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Noticias, datos curiosos y novedades de la tienda Sonido Vivo.">
+  <title>Blogs | Sonido Vivo</title>
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+
+  <!-- Accesibilidad: Salto al contenido -->
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header>
+    <a href="index.html" class="logo">🎸 Sonido Vivo</a>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <!-- aria-current indica la página activa -->
+        <li><a href="blog.html" aria-current="page">Blogs</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Iniciar sesion</a></li>
+      </ul>
+    </nav>
+    <a href="carrito.html" class="carrito-icono">🛒 Carrito</a>
+  </header>
+
+  <main id="contenido-principal">
+    
+    <section class="hero">
+      <h1>NOTICIAS IMPORTANTES</h1>
+      <p>Entérate de las últimas novedades, tips de mantenimiento y datos curiosos del mundo musical.</p>
+    </section>
+
+    <section>
+      <!-- Usaremos una clase nueva para apilar los blogs verticalmente como pide el mockup -->
+      <div class="blogs-contenedor">
+        
+        <!-- Blog 1 -->
+        <article class="blog-card">
+          <div class="blog-contenido">
+            <h2>CASO CURIOSO #1: La guitarra que sobrevivió a un incendio</h2>
+            <p>Descubre cómo logramos restaurar una Fender Stratocaster clásica después de un grave accidente en un estudio de grabación local. Un trabajo de luthería extrema.</p>
+            <!-- El enlace lleva al detalle del blog según el requerimiento -->
+            <a href="detalle-blog1.html" class="boton">VER CASO</a>
+          </div>
+          <img src="img/blog1.jpg" alt="Restauración de guitarra Fender quemada" class="blog-img">
+        </article>
+
+        <!-- Blog 2 -->
+        <article class="blog-card">
+          <div class="blog-contenido">
+            <h2>CASO CURIOSO #2: El mito de las maderas pesadas</h2>
+            <p>¿Es cierto que un bajo más pesado suena mejor? Analizamos las frecuencias y el sustain de distintas maderas para desmitificar esta creencia popular entre los bajistas.</p>
+            <a href="detalle-blog2.html" class="boton">VER CASO</a>
+          </div>
+          <img src="img/blog2.jpg" alt="Comparación de maderas para bajo eléctrico" class="blog-img">
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <address>&copy; 2026 Sonido Vivo - Viña del Mar, Región de Valparaíso</address>
+  </footer>
+
+</body>
+</html>
