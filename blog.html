@@ -9,13 +9,20 @@
 </head>
 <body>
 
-  <!-- Accesibilidad: Salto al contenido -->
-  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
-
   <header>
     <a href="index.html" class="logo">🎸 Sonido Vivo</a>
+     <button
+      id="boton-menu"
+      class="boton-menu"
+      type="button"
+      aria-label="Abrir o cerrar menú principal"
+      aria-controls="menu-principal"
+      aria-expanded="false">
+      <span aria-hidden="true">☰</span>
+    </button>
+    
     <nav aria-label="Navegación principal">
-      <ul>
+      <ul id="menu-principal" class="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
@@ -47,7 +54,7 @@
             <!-- El enlace lleva al detalle del blog según el requerimiento -->
             <a href="detalle-blog1.html" class="boton">VER CASO</a>
           </div>
-          <img src="img/blog1.jpg" alt="Restauración de guitarra Fender quemada" class="blog-img">
+          <img src="assets/img/blog/blog1.jpg" alt="Restauración de guitarra Fender quemada" class="blog-img">
         </article>
 
         <!-- Blog 2 -->
@@ -57,7 +64,7 @@
             <p>¿Es cierto que un bajo más pesado suena mejor? Analizamos las frecuencias y el sustain de distintas maderas para desmitificar esta creencia popular entre los bajistas.</p>
             <a href="detalle-blog2.html" class="boton">VER CASO</a>
           </div>
-          <img src="img/blog2.jpg" alt="Comparación de maderas para bajo eléctrico" class="blog-img">
+          <img src="assets/img/blog/blog2.jpg" alt="Comparación de maderas para bajo eléctrico" class="blog-img">
         </article>
 
       </div>
@@ -68,6 +75,6 @@
   <footer>
     <address>&copy; 2026 Sonido Vivo - Viña del Mar, Región de Valparaíso</address>
   </footer>
-
+<script src="js/menu.js"></script>
 </body>
 </html>

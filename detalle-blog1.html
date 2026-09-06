@@ -9,13 +9,20 @@
 </head>
 <body>
 
-  <!-- Accesibilidad -->
-  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
-
   <header>
     <a href="index.html" class="logo">🎸 Sonido Vivo</a>
+     <button
+      id="boton-menu"
+      class="boton-menu"
+      type="button"
+      aria-label="Abrir o cerrar menú principal"
+      aria-controls="menu-principal"
+      aria-expanded="false">
+      <span aria-hidden="true">☰</span>
+    </button>
+    
     <nav aria-label="Navegación principal">
-      <ul>
+      <ul id="menu-principal" class="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
@@ -61,7 +68,7 @@
 
         <!-- Reutilizamos tu clase .boton -->
         <div class="acciones-articulo">
-          <a href="blogs.html" class="boton">← Volver a los blogs</a>
+          <a href="blog.html" class="boton">← Volver a los blogs</a>
         </div>
 
       </article>
@@ -72,6 +79,6 @@
   <footer>
     <address>&copy; 2026 Sonido Vivo - Viña del Mar, Región de Valparaíso</address>
   </footer>
-
+<script src="js/menu.js"></script>
 </body>
 </html>

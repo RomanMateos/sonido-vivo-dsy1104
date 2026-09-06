@@ -251,3 +251,34 @@ footer {
   margin-top: 3rem;
   text-align: center;
 }
+
+.boton-menu {
+  display: inline-block;
+  padding: 0.65rem 0.85rem;
+  font-size: 1.5rem;
+  background-color: #ffffff;
+  border: 0.1rem solid #1f4b5b;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu.menu-abierto {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .boton-menu {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+  }
+}

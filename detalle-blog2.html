@@ -3,19 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Detalle del caso curioso sobre la restauración de una guitarra Fender Stratocaster.">
-  <title>La guitarra que sobrevivió a un incendio | Sonido Vivo</title>
+  <meta name="description" content="Detalle del caso curioso donde desmitificamos si las maderas más pesadas realmente mejoran el sonido de un bajo eléctrico.">
+  <title>El mito de las maderas pesadas | Sonido Vivo</title>
   <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
 
-  <!-- Accesibilidad -->
-  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
-
   <header>
     <a href="index.html" class="logo">🎸 Sonido Vivo</a>
+     <button
+      id="boton-menu"
+      class="boton-menu"
+      type="button"
+      aria-label="Abrir o cerrar menú principal"
+      aria-controls="menu-principal"
+      aria-expanded="false">
+      <span aria-hidden="true">☰</span>
+    </button>
+    
     <nav aria-label="Navegación principal">
-      <ul>
+      <ul id="menu-principal" class="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
@@ -35,33 +42,33 @@
       <article>
         
         <header class="cabecera-articulo">
-          <h1>CASO CURIOSO #1: La guitarra que sobrevivió a un incendio</h1>
-          <p class="meta-datos">Publicado el 4 de Septiembre de 2026 | Por el Equipo de Luthería</p>
+          <h1>CASO CURIOSO #2: El mito de las maderas pesadas</h1>
+          <p class="meta-datos">Publicado el 5 de Septiembre de 2026 | Por el Equipo de Acústica</p>
         </header>
 
-        <!-- Reutilizamos object-fit y bordes redondeados (lo controlaremos en CSS) -->
-        <img src="assets/img/blog2.jpg" alt="Estado inicial de la guitarra Fender quemada en el taller" class="img-articulo">
+        <!-- Reutilizamos object-fit y bordes redondeados -->
+        <img src="assets/img/blog2.jpg" alt="Comparación de distintas maderas para la construcción de bajos eléctricos" class="img-articulo">
 
         <div class="contenido-texto">
-          <p>Hace unas semanas, recibimos en nuestro taller de <strong>Sonido Vivo</strong> uno de los desafíos más grandes de nuestra carrera. Un músico local nos trajo su preciada Fender Stratocaster clásica tras un accidente en su estudio de grabación.</p>
+          <p>En el mundo de los bajistas, existe una creencia que ha pasado de generación en generación: <em>"Mientras más pesado sea el bajo, mejor será su sustain y más profundos sus graves"</em>. En <strong>Sonido Vivo</strong> decidimos poner a prueba esta vieja leyenda de la luthería.</p>
           
-          <h2>El diagnóstico inicial</h2>
-          <p>A simple vista, la situación era devastadora. El barniz estaba completamente derretido en el cuerpo, el mástil presentaba signos de carbonización leve y toda la electrónica interna estaba fundida. Sin embargo, al revisar la integridad estructural, el alma del mástil seguía intacta.</p>
+          <h2>El experimento de las frecuencias</h2>
+          <p>Para salir de dudas, armamos tres cuerpos de bajo idénticos en dimensiones, pero utilizando distintas maderas: Fresno de pantano (muy ligero), Aliso (peso medio) y Caoba densa (muy pesado). Utilizamos el mismo mástil, las mismas cuerdas y la misma electrónica intercambiable para grabar las frecuencias en el estudio.</p>
 
-          <h2>El proceso de restauración</h2>
-          <p>El trabajo consistió en tres etapas fundamentales:</p>
+          <h2>Los sorprendentes resultados</h2>
+          <p>Al analizar los espectrogramas de audio, descubrimos lo siguiente:</p>
           <ul>
-            <li><strong>Decapado y lijado:</strong> Tuvimos que retirar toda la capa quemada respetando la madera original.</li>
-            <li><strong>Reemplazo electrónico:</strong> Instalamos nuevas pastillas (cápsulas) y cableado respetando el diagrama clásico de Fender.</li>
-            <li><strong>Acabado:</strong> Aplicamos un acabado "Relic" para no ocultar su historia, sellando la madera para protegerla.</li>
+            <li><strong>El mito del Sustain:</strong> El bajo de caoba (el más pesado) tuvo un <em>sustain</em> marginalmente mayor, pero la diferencia fue casi imperceptible al oído humano (menos del 2%).</li>
+            <li><strong>Frecuencias graves:</strong> Sorprendentemente, el bajo de aliso (peso medio) entregó una respuesta de graves mucho más cálida y definida que la caoba.</li>
+            <li><strong>Comodidad vs Sonido:</strong> El fresno ligero demostró que se puede tener un tono contundente, con mucho "punch", sin destrozar la espalda del músico tras dos horas de show.</li>
           </ul>
 
-          <p>Hoy, esta guitarra no solo volvió a sonar, sino que tiene una resonancia única y una historia increíble que contar en cada acorde.</p>
+          <p><strong>Conclusión:</strong> El peso no es un indicador definitivo de calidad o de un mejor tono. La vibración depende más de la estructura de las vetas de la madera, la unión del mástil con el cuerpo y la calidad del hardware. ¡Así que no temas elegir un instrumento ligero!</p>
         </div>
 
         <!-- Reutilizamos tu clase .boton -->
         <div class="acciones-articulo">
-          <a href="blogs.html" class="boton">← Volver a los blogs</a>
+          <a href="blog.html" class="boton">← Volver a los blogs</a>
         </div>
 
       </article>
@@ -72,6 +79,6 @@
   <footer>
     <address>&copy; 2026 Sonido Vivo - Viña del Mar, Región de Valparaíso</address>
   </footer>
-
+<script src="js/menu.js"></script>
 </body>
 </html>
