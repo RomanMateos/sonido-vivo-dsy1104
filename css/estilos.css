@@ -88,6 +88,32 @@ nav a:hover {
   font-weight: bold;
 }
  
+/* ===== MENU HAMBURGUESA ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+ 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+ 
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+ 
+  nav ul.menu-abierto {
+    display: flex;
+  }
+}
+ 
 /* ===== CONTENIDO PRINCIPAL ===== */
 main {
   max-width: 1100px;
