@@ -8,7 +8,7 @@ const productos = [
     stock: 8,
     precio: 129990,
     descripcion: "Tapa de abeto, aros y fondo de meranti. Ideal para principiantes.",
-    imagen: "img/productos/ga001.jpg"
+    imagen: "assets/img/productos/ga001.jpg"
   },
   {
     codigo: "GE001",
@@ -19,7 +19,7 @@ const productos = [
     stock: 5,
     precio: 249990,
     descripcion: "Cuerpo de alamo, mastil de arce, pastillas SSS.",
-    imagen: "img/productos/ge001.jpg"
+    imagen: "assets/img/productos/ge001.jpg"
   },
   {
     codigo: "BA001",
@@ -30,7 +30,7 @@ const productos = [
     stock: 5,
     precio: 299990,
     descripcion: "Pickup PJ, cuerpo alamo, mastil arce.",
-    imagen: "img/productos/ba001.jpg"
+    imagen: "assets/img/productos/ba001.jpg"
   },
   {
     codigo: "BT001",
@@ -41,7 +41,7 @@ const productos = [
     stock: 2,
     precio: 599990,
     descripcion: "Incluye stands, platillos y pedal de bombo.",
-    imagen: "img/productos/bt001.jpg"
+    imagen: "assets/img/productos/bt001.jpg"
   },
   {
     codigo: "TC001",
@@ -52,7 +52,7 @@ const productos = [
     stock: 4,
     precio: 249990,
     descripcion: "61 teclas sensibles al tacto, 622 voces.",
-    imagen: "img/productos/tc001.jpg"
+    imagen: "assets/img/productos/tc001.jpg"
   },
   {
     codigo: "MI001",
@@ -63,6 +63,6 @@ const productos = [
     stock: 8,
     precio: 149990,
     descripcion: "Estandar industria para voz en vivo.",
-    imagen: "img/productos/mi001.jpg"
+    imagen: "assets/img/productos/mi001.jpg"
   }
 ];
