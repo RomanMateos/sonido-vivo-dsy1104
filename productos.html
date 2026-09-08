@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo completo de instrumentos musicales Sonido Vivo">
+  <title>Productos | Sonido Vivo</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+ 
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+ 
+  <header>
+    <a href="index.html" class="logo">Sonido Vivo</a>
+    <nav aria-label="Navegación principal">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú de navegación">☰</button>
+      <ul id="menu-principal">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html" aria-current="page">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Iniciar sesion</a></li>
+      </ul>
+    </nav>
+    <a href="carrito.html" class="carrito-icono">🛒</a>
+  </header>
+ 
+  <main id="contenido-principal">
+    <section class="hero">
+      <h1>Catalogo completo</h1>
+      <p>Todos nuestros instrumentos y equipos de audio</p>
+    </section>
+ 
+    <section>
+      <div class="productos-grid" id="contenedor-productos"></div>
+    </section>
+  </main>
+ 
+  <footer>
+    <address>2026 Sonido Vivo - Viña del Mar, Región de Valparaíso</address>
+  </footer>
+ 
+  <script src="js/productos-data.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/productos.js"></script>
+</body>
+</html>
+ 
