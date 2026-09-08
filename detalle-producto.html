@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Detalle de producto - Sonido Vivo">
   <title>Detalle de producto | Sonido Vivo</title>
-  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
 <body>
  
@@ -13,13 +13,23 @@
  
   <header>
     <a href="index.html" class="logo">Sonido Vivo</a>
+     <button
+      id="boton-menu"
+      class="boton-menu"
+      type="button"
+      aria-label="Abrir o cerrar menú principal"
+      aria-controls="menu-principal"
+      aria-expanded="false">
+      <span aria-hidden="true">☰</span>
+    </button>
+
     <nav aria-label="Navegación principal">
       <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú de navegación">☰</button>
-      <ul id="menu-principal">
+      <ul id="menu-principal" class="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="productos.html" aria-current="page">Productos</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="login.html">Iniciar sesion</a></li>
       </ul>
