@@ -30,13 +30,44 @@
     <section>
       <h2>Nuevo Usuario</h2>
     </section>
-
-<h1>Formulario de participación</h1>
-    <p>Completa los datos para manifestar interés en una actividad.</p>
   </header>
+  <form class="formularioregistro" action="confirmaregistro.html" method="get">
+    <fieldset>
+      <legend>Datos del nuevo usuario</legend>
 
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" name="nombre" type="text"
+        autocomplete="name" minlenght="2" maxlenght="30" required>
 
-  
+      <label for="apellido">Apellido:</label>
+      <input id="apellido" name="apellido" type="text"
+        autocomplete="apellido" minlenght="2" maxlenght="30" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" name="telefono" type="tel"
+        autocomplete="tel" placeholder="011 899 988"
+        pattern="\+56[0-9]{9}" value="+56" minlenght="12" maxlenght="12" required>
+
+      <label for="email">E-mail:</label>
+      <input id="email" name="email" type="email"
+        autocomplete="email" placeholder="nombre@correo.com" required>
+      
+      <label for="confirmaemail">Confirmar E-mail:</label>
+      <input id="confirmaemail" name="confirmaemail" type="email"
+        autocomplete="email" placeholder="nombre@correo.com" required>
+      
+      <label for="password">Contraseña: </label>
+      <input id="password" name="password" type="password"
+        autocomplete="password" minlenght="8" maxlenght="8" placeholder="Debe tener 8 caracteres" required>
+      
+      <label for="confirmapassword">Confirmar ontraseña: </label>
+      <input id="confirmapassword" name="confirmapassword" type="password"
+        autocomplete="password" minlenght="8" maxlenght="8" placeholder="Repita la contraseña" required>
+    </fieldset>
+
+  <button type="submit">Registrarse</button>
+
+  </form>
   </main>
   <footer>
     <p>&copy; 2026 Sonido Vivo - Viña del Mar, Region de Valparaiso</p>
