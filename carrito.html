@@ -3,41 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tienda de instrumentos musicales y equipos de audio en Viña del Mar">
-  <title>Sonido Vivo | Tienda de Instrumentos Musicales</title>
-  <link rel="stylesheet" href="assets/css/estilos.css">
+  <meta name="description" content="Carrito de compras - Sonido Vivo">
+  <title>Carrito | Sonido Vivo</title>
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
  
   <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
  
   <header>
-    <a href="index.html" class="logo"> Sonido Vivo</a>
+    <a href="index.html" class="logo">Sonido Vivo</a>
     <nav aria-label="Navegación principal">
       <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú de navegación">☰</button>
       <ul id="menu-principal">
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="login.html">Iniciar sesion</a></li>
       </ul>
     </nav>
-    <a href="carrito.html" class="carrito-icono">🛒</a>
+    <a href="carrito.html" class="carrito-icono" aria-current="page">🛒</a>
   </header>
  
   <main id="contenido-principal">
     <section class="hero">
-      <h1>Sonido Vivo</h1>
-      <p>11 años equipando a musicos de Viña del Mar y todo Chile. Guitarras, bajos, baterias, teclados y mas.</p>
+      <h1>Tu carrito</h1>
     </section>
- 
-    <section>
-      <h2>Productos destacados</h2>
-      <div class="productos-grid" id="contenedor-destacados">
-      </div>
-    </section>
+    <section id="contenedor-carrito"></section>
+    <p id="total-carrito" class="precio"></p>
   </main>
  
   <footer>
@@ -46,7 +41,8 @@
  
   <script src="js/productos-data.js"></script>
   <script src="js/menu.js"></script>
-  <script src="js/home.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/carrito-vista.js"></script>
 </body>
 </html>
  

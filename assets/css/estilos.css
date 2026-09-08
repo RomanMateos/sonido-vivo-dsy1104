@@ -3,24 +3,51 @@
   --color-acento: #D9A441;     /* ambar dorado - hover, detalles */
   --color-fondo: #FAF6EF;      /* crema - fondo de pagina */
   --color-texto: #2B2724;      /* gris carbon calido - texto principal */
-  --color-exito: #5C7A4F;        /* verde oliva - mensajes de exito */
+  --color-exito: #5C7A4F;      /* verde oliva - mensajes de exito */
   --color-error: #B33A2E;      /* rojo oxido - errores de validacion */
 }
-
-
+ 
+/* Reset basico: quitamos margenes/paddings por defecto del navegador
+   para tener control total del espaciado nosotros mismos */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box; /* el padding y el borde se cuentan DENTRO del ancho del elemento, no se suman aparte */
 }
-
+ 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  line-height: 1.6; 
+  line-height: 1.6; /* mejora la legibilidad de parrafos largos */
 }
-
+ 
+/* ===== ACCESIBILIDAD: SKIP LINK ===== */
+.salto-contenido {
+  position: absolute;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primario);
+  color: white;
+  transform: translateY(-150%);
+  z-index: 100;
+}
+ 
+.salto-contenido:focus {
+  transform: translateY(0);
+}
+ 
+/* ===== ESTADOS DE FOCO Y FORMULARIOS (Guia 4, seccion 10) ===== */
+:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 3px;
+}
+ 
+input:required,
+select:required,
+textarea:required {
+  border-left: 0.3rem solid var(--color-primario);
+}
+ 
 /* ===== HEADER Y NAVEGACION ===== */
 header {
   background-color: var(--color-primario);
@@ -29,45 +56,71 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* para que en pantallas chicas el menu baje de linea en vez de aplastarse */
 }
-
+ 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
 }
-
+ 
 nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
-
+ 
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
 }
-
+ 
 nav a:hover {
   color: var(--color-acento);
 }
-
+ 
 .carrito-icono {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
-
+ 
+/* ===== MENU HAMBURGUESA ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+ 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+ 
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+ 
+  nav ul.menu-abierto {
+    display: flex;
+  }
+}
+ 
 /* ===== CONTENIDO PRINCIPAL ===== */
 main {
   max-width: 1100px;
-  margin: 0 auto; 
+  margin: 0 auto; /* centra el contenido horizontalmente */
   padding: 2rem;
 }
-
+ 
 .hero {
   background-color: white;
   border-radius: 8px;
@@ -75,52 +128,57 @@ main {
   margin-bottom: 2rem;
   text-align: center;
 }
-
+ 
 .hero h1 {
   color: var(--color-primario);
   margin-bottom: 0.5rem;
 }
-
+ 
 /* ===== GRILLA DE PRODUCTOS ===== */
 .productos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
 }
-
+ 
 .producto-card {
   background-color: white;
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s; 
+  transition: transform 0.2s; /* efecto suave al pasar el mouse */
 }
-
+ 
 .producto-card:hover {
   transform: translateY(-4px);
 }
-
+ 
+.producto-card a {
+  text-decoration: none;
+  color: inherit;
+}
+ 
 .producto-card img {
   width: 100%;
   height: 160px;
-  object-fit: cover;
+  object-fit: cover; /* recorta la imagen sin deformarla si no calza el tamaño exacto */
   border-radius: 4px;
   margin-bottom: 0.75rem;
 }
-
+ 
 .producto-card h3 {
   font-size: 1rem;
   margin-bottom: 0.25rem;
 }
-
+ 
 .producto-card .precio {
   color: var(--color-primario);
   font-weight: bold;
   font-size: 1.1rem;
   margin: 0.5rem 0;
 }
-
+ 
 .boton {
   background-color: var(--color-acento);
   color: var(--color-texto);
@@ -130,11 +188,11 @@ main {
   cursor: pointer;
   font-weight: 600;
 }
-
+ 
 .boton:hover {
   opacity: 0.9;
 }
-
+ 
 /* ===== FOOTER ===== */
 footer {
   background-color: var(--color-texto);
