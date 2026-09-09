@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse | Sonido Vivo</title>
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header>
+    <a href="index.html" class="logo">Sonido Vivo</a>
+    <button
+      id="boton-menu"
+      class="boton-menu"
+      type="button"
+      aria-label="Abrir o cerrar menú principal"
+      aria-controls="menu-principal"
+      aria-expanded="false">
+      <span aria-hidden="true">☰</span>
+    </button>
+
+    <nav aria-label="Navegación principal">
+      <ul id="menu-principal" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Iniciar sesión</a></li>
+        <li><a href="signup.html" aria-current="page">Registrarse</a></li>
+      </ul>
+    </nav>
+    <a href="carrito.html" class="carrito-icono">🛒</a>
+  </header>
+
+  <main id="contenido-principal">
+    <section class="hero">
+      <h1>Sonido Vivo</h1>
+      <p>11 años equipando a músicos de Viña del Mar y todo Chile. Guitarras, bajos, baterías, teclados y más.</p>
+    </section>
+
+    <section>
+      <h2>Nuevo Usuario</h2>
+      <form id="formulario-registro" class="formulario-registro" action="confirmacion.html" method="get" novalidate>
+        <fieldset>
+          <legend>Identificación</legend>
+
+          <div class="campo-formulario">
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="given-name" minlength="2" maxlength="50" required>
+            <small id="error-nombre" class="mensaje-error"></small>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="apellidos">Apellidos:</label>
+            <input id="apellidos" name="apellidos" type="text" autocomplete="family-name" minlength="2" maxlength="100" required>
+            <small id="error-apellidos" class="mensaje-error"></small>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="rut">RUT:</label>
+            <input id="rut" name="rut" type="text" placeholder="Ej: 12345678K (sin puntos ni guión)" minlength="8" maxlength="10" required>
+            <small id="error-rut" class="mensaje-error"></small>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="email">E-mail:</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" maxlength="100" required>
+            <small id="error-email" class="mensaje-error"></small>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dirección</legend>
+
+          <div class="campo-formulario">
+            <label for="region">Región:</label>
+            <select id="region" name="region" required>
+              <option value="">Selecciona una región</option>
+            </select>
+            <small id="error-region" class="mensaje-error"></small>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="comuna">Comuna:</label>
+            <select id="comuna" name="comuna" required>
+              <option value="">Selecciona una comuna</option>
+            </select>
+            <small id="error-comuna" class="mensaje-error"></small>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="calle">Calle:</label>
+            <input id="calle" name="calle" type="text" minlength="5" maxlength="300" required>
+            <small id="error-calle" class="mensaje-error"></small>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contraseña</legend>
+
+          <div class="campo-formulario">
+            <label for="password">Elige una contraseña:</label>
+            <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="20" placeholder="Debe tener al menos 8 caracteres." required>
+            <small id="error-password" class="mensaje-error"></small>
+          </div>
+        </fieldset>
+
+        <div>
+          <button type="submit">Completar Registro</button>
+          <small id="mensaje-exito"></small>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>2026 Sonido Vivo - Viña del Mar, Región de Valparaíso</p>
+  </footer>
+
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/signup.js"></script>
+</body>
+</html>

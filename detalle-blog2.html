@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detalle del caso curioso donde desmitificamos si las maderas más pesadas realmente mejoran el sonido de un bajo eléctrico.">
+  <title>El mito de las maderas pesadas | Sonido Vivo</title>
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+
+    <a class="salto-contenido" href="#contenido-principal">Ir al contenido</a>
+
+  <header>
+    <a href="index.html" class="logo"> Sonido Vivo</a>
+     <button
+      id="boton-menu"
+      class="boton-menu"
+      type="button"
+      aria-label="Abrir o cerrar menú principal"
+      aria-controls="menu-principal"
+      aria-expanded="false">
+      <span aria-hidden="true">☰</span>
+    </button>
+    
+    <nav aria-label="Navegación principal">
+      <ul id="menu-principal" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <!-- Resaltamos Blogs porque seguimos dentro de esta sección -->
+        <li><a href="blog.html" aria-current="page">Blogs</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Iniciar sesion</a></li>
+      </ul>
+    </nav>
+    <a href="carrito.html" class="carrito-icono">🛒 Carrito</a>
+  </header>
+
+  <main id="contenido-principal">
+    
+    <!-- Usamos un contenedor específico para lectura -->
+    <section class="contenedor-lectura">
+      <article>
+        
+        <header class="cabecera-articulo">
+          <h1>CASO CURIOSO #2: El mito de las maderas pesadas</h1>
+          <p class="meta-datos">Publicado el 5 de Septiembre de 2026 | Por el Equipo de Acústica</p>
+        </header>
+
+        <!-- Reutilizamos object-fit y bordes redondeados -->
+        <img src="assets/img/blog/detalle-blog12.jpg" alt="Comparación de distintas maderas para la construcción de bajos eléctricos" class="img-articulo">
+
+        <div class="contenido-texto">
+          <p>En el mundo de los bajistas, existe una creencia que ha pasado de generación en generación: <em>"Mientras más pesado sea el bajo, mejor será su sustain y más profundos sus graves"</em>. En <strong>Sonido Vivo</strong> decidimos poner a prueba esta vieja leyenda de la luthería.</p>
+          
+          <h2>El experimento de las frecuencias</h2>
+          <p>Para salir de dudas, armamos tres cuerpos de bajo idénticos en dimensiones, pero utilizando distintas maderas: Fresno de pantano (muy ligero), Aliso (peso medio) y Caoba densa (muy pesado). Utilizamos el mismo mástil, las mismas cuerdas y la misma electrónica intercambiable para grabar las frecuencias en el estudio.</p>
+
+          <h2>Los sorprendentes resultados</h2>
+          <p>Al analizar los espectrogramas de audio, descubrimos lo siguiente:</p>
+          <ul>
+            <li><strong>El mito del Sustain:</strong> El bajo de caoba (el más pesado) tuvo un <em>sustain</em> marginalmente mayor, pero la diferencia fue casi imperceptible al oído humano (menos del 2%).</li>
+            <li><strong>Frecuencias graves:</strong> Sorprendentemente, el bajo de aliso (peso medio) entregó una respuesta de graves mucho más cálida y definida que la caoba.</li>
+            <li><strong>Comodidad vs Sonido:</strong> El fresno ligero demostró que se puede tener un tono contundente, con mucho "punch", sin destrozar la espalda del músico tras dos horas de show.</li>
+          </ul>
+
+          <p><strong>Conclusión:</strong> El peso no es un indicador definitivo de calidad o de un mejor tono. La vibración depende más de la estructura de las vetas de la madera, la unión del mástil con el cuerpo y la calidad del hardware. ¡Así que no temas elegir un instrumento ligero!</p>
+        </div>
+
+        <!-- Reutilizamos tu clase .boton -->
+        <div class="acciones-articulo">
+          <a href="blog.html" class="boton">← Volver a los blogs</a>
+        </div>
+
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <address>&copy; 2026 Sonido Vivo - Viña del Mar, Región de Valparaíso</address>
+  </footer>
+<script src="assets/js/menu.js"></script>
+</body>
+</html>
