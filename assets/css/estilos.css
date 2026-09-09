@@ -6,22 +6,21 @@
   --color-exito: #5C7A4F;      /* verde oliva - mensajes de exito */
   --color-error: #B33A2E;      /* rojo oxido - errores de validacion */
 }
- 
-/* Reset basico: quitamos margenes/paddings por defecto del navegador
-   para tener control total del espaciado nosotros mismos */
+
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* el padding y el borde se cuentan DENTRO del ancho del elemento, no se suman aparte */
+  box-sizing: border-box;
 }
- 
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  line-height: 1.6; /* mejora la legibilidad de parrafos largos */
+  line-height: 1.6;
 }
- 
+
 /* ===== ACCESIBILIDAD: SKIP LINK ===== */
 .salto-contenido {
   position: absolute;
@@ -31,174 +30,207 @@ body {
   transform: translateY(-150%);
   z-index: 100;
 }
- 
+
 .salto-contenido:focus {
   transform: translateY(0);
 }
- 
-/* ===== ESTADOS DE FOCO Y FORMULARIOS (Guia 4, seccion 10) ===== */
+
+/* ===== ESTADOS DE FOCO Y FORMULARIOS ===== */
 :focus-visible {
-  outline: 3px solid var(--color-acento);
-  outline-offset: 3px;
+  outline: 0.1875rem solid var(--color-acento);
+  outline-offset: 0.1875rem;
 }
- 
+
 input:required,
 select:required,
 textarea:required {
   border-left: 0.3rem solid var(--color-primario);
 }
- 
-/* ===== HEADER Y NAVEGACION ===== */
+
+/* ===== HEADER Y NAVEGACIÓN ===== */
 header {
   background-color: var(--color-primario);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* para que en pantallas chicas el menu baje de linea en vez de aplastarse */
+  flex-wrap: wrap;
 }
- 
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
 }
- 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
- 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
- 
-nav a:hover {
-  color: var(--color-acento);
-}
- 
+
 .carrito-icono {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
- 
-/* ===== MENU HAMBURGUESA ===== */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
+
+/* Control del botón menú hamburguesa */
+.boton-menu {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
   font-size: 1.5rem;
+  background-color: transparent;
+  color: white;
+  border: 0.0625rem solid white;
+  border-radius: 0.25rem;
   cursor: pointer;
 }
- 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+
+nav {
+  width: 100%;
+  order: 3; /* En móvil se despliega bajo el logo y el carrito */
+}
+
+.menu {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.menu.menu-abierto {
+  display: flex;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+}
+
+.menu a:hover {
+  color: var(--color-acento);
+}
+
+/* Adaptación de Header a escritorio (>= 768px / 48rem) */
+@media (min-width: 48rem) {
+  header {
+    padding: 1rem 2rem;
   }
- 
-  nav ul {
+
+  .boton-menu {
     display: none;
-    flex-direction: column;
-    width: 100%;
   }
- 
-  nav ul.menu-abierto {
+
+  nav {
+    width: auto;
+    order: initial;
+  }
+
+  .menu {
     display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-top: 0;
   }
 }
- 
+
 /* ===== CONTENIDO PRINCIPAL ===== */
 main {
-  max-width: 1100px;
-  margin: 0 auto; /* centra el contenido horizontalmente */
-  padding: 2rem;
+  max-width: 68.75rem; /* 1100px */
+  margin: 0 auto;
+  padding: 1rem;
 }
- 
+
+@media (min-width: 48rem) {
+  main {
+    padding: 2rem;
+  }
+}
+
 .hero {
   background-color: white;
-  border-radius: 8px;
-  padding: 2rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem 1rem;
   margin-bottom: 2rem;
   text-align: center;
 }
- 
+
+@media (min-width: 48rem) {
+  .hero {
+    padding: 2rem;
+  }
+}
+
 .hero h1 {
   color: var(--color-primario);
   margin-bottom: 0.5rem;
 }
- 
+
 /* ===== GRILLA DE PRODUCTOS ===== */
 .productos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13.75rem), 1fr));
   gap: 1.5rem;
 }
- 
+
 .producto-card {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s; /* efecto suave al pasar el mouse */
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
 }
- 
+
 .producto-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-0.25rem);
 }
- 
+
 .producto-card a {
   text-decoration: none;
   color: inherit;
 }
- 
+
 .producto-card img {
   width: 100%;
-  height: 160px;
-  object-fit: cover; /* recorta la imagen sin deformarla si no calza el tamaño exacto */
-  border-radius: 4px;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 0.25rem;
   margin-bottom: 0.75rem;
 }
- 
+
 .producto-card h3 {
   font-size: 1rem;
   margin-bottom: 0.25rem;
 }
- 
+
 .producto-card .precio {
   color: var(--color-primario);
   font-weight: bold;
   font-size: 1.1rem;
   margin: 0.5rem 0;
 }
- 
+
 .boton {
   background-color: var(--color-acento);
   color: var(--color-texto);
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
   font-weight: 600;
 }
- 
+
 .boton:hover {
   opacity: 0.9;
 }
- 
+
 /* ===== FOOTER ===== */
 footer {
   background-color: var(--color-texto);
   color: white;
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   margin-top: 3rem;
 }
 
@@ -206,7 +238,7 @@ footer {
 .img-fluida {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   margin: 1rem 0;
 }
 
@@ -223,13 +255,21 @@ footer {
 
 .blog-card {
   background-color: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.08);
   display: flex;
-  flex-direction: column-reverse; /* En celulares la imagen va arriba */
+  flex-direction: column-reverse;
   gap: 1.5rem;
   align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .blog-card {
+    padding: 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .blog-contenido {
@@ -247,25 +287,23 @@ footer {
 
 .blog-img {
   width: 100%;
-  max-width: 400px;
-  height: 250px;
+  max-width: 25rem;
+  height: 15.625rem;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 
-/* Para pantallas más grandes (Tablets y PC): Texto a la izq, Imagen a la der */
-@media (min-width: 768px) {
-  .blog-card {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-/* ===== DETALLE DE BLOG (Contenedor de lectura) ===== */
+/* ===== DETALLE DE BLOG ===== */
 .contenedor-lectura {
-  max-width: 800px; /* Ancho máximo ideal para leer */
-  margin: 0 auto;   /* Centra la sección en la pantalla */
-  padding: 3rem 1rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 48rem) {
+  .contenedor-lectura {
+    padding: 3rem 1rem;
+  }
 }
 
 .cabecera-articulo h1 {
@@ -282,9 +320,9 @@ footer {
 
 .img-articulo {
   width: 100%;
-  max-height: 450px;
+  max-height: 28.125rem;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   margin-bottom: 2rem;
 }
 
@@ -308,35 +346,4 @@ footer {
 .acciones-articulo {
   margin-top: 3rem;
   text-align: center;
-}
-
-.boton-menu {
-  display: inline-block;
-  padding: 0.65rem 0.85rem;
-  font-size: 1.5rem;
-  background-color: #ffffff;
-  border: 0.1rem solid #1f4b5b;
-  border-radius: 0.35rem;
-  cursor: pointer;
-}
-
-.menu {
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.menu.menu-abierto {
-  display: flex;
-}
-
-@media (min-width: 768px) {
-  .boton-menu {
-    display: none;
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: row;
-  }
 }
