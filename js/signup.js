@@ -325,17 +325,11 @@ if (registroGuardado !== null) {
   mensajeExito.textContent = `Último usuario registrado: ${ultimoUsuario.nombre}`; 
 }
 
-//Validación de Login
-
-
-
-//Validación de formulario de Contacto
+//CONTACTO.HTML - Validación de formulario de Contacto
 
 
 
 //APÉNDICES
-  //Guardado de datos de formulario en arreglo
-
 //Regiones y Comunas
   //Colección: regiones y comunas
   const regionesYComunas = {
