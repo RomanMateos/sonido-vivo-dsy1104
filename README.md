@@ -23,19 +23,24 @@ Sitio web desarrollado con HTML, CSS y JavaScript (sin frameworks ni backend en 
  
 ```
 sonido-vivo-dsy1104/
-├── index.html              → Home
-├── productos.html           → Catálogo completo
-├── detalle-producto.html    → Detalle de un producto
-├── carrito.html              → Carrito de compras
-├── login.html / registro.html / contacto.html
+├── index.html                   → Home
+├── productos.html               → Catálogo completo
+├── detalle-producto.html        → Detalle de un producto
+├── carrito.html                 → Carrito de compras
+├── login.html                   → Página de inicio de sesión
+├── signup.html                  → Página de registro de usuario nuevo
+├── contacto.html                → Página de formulario de contacto
 ├── nosotros.html / blogs.html
 ├── admin/                     → Panel de administración
 ├── css/estilos.css            → Hoja de estilos compartida
 ├── js/
-│   ├── productos-data.js      → Datos del catálogo
-│   ├── carrito.js             → Lógica de carrito (compartida)
-│   ├── productos.js           → Renderizado del catálogo
-│   └── detalle.js             → Renderizado del detalle
+│   ├── productos-data.js       → Datos del catálogo
+│   ├── carrito.js              → Lógica de carrito (compartida)
+│   ├── productos.js            → Renderizado del catálogo
+│   └── detalle.js              → Renderizado del detalle
+│   └── signup.js               → Validación y guardado de formulario de registro de nuevos usuarios
+│   └── login.js                → Validación de formulario de login
+│   └── contacto.js             → Validación y guardado de formulario de contacto
 ├── img/productos/              → Imágenes de productos
 └── docs/
     ├── ERS-sonido-vivo.md      → Especificación de Requisitos
@@ -52,10 +57,10 @@ sonido-vivo-dsy1104/
 - [x] Home con productos destacados
 - [x] Catálogo completo con carrito (localStorage)
 - [x] Detalle de producto
-- [ ] Carrito de compras (vista completa)
-- [ ] Login / Registro / Contacto
+- [x] Carrito de compras (vista completa)
+- [x] Login / Registro / Contacto
 - [ ] Panel de administración
-- [ ] Nosotros / Blogs
+- [x] Nosotros / Blogs
 ## Documentación
  
 - [Especificación de Requisitos (ERS)](docs/ERS-sonido-vivo.md)
