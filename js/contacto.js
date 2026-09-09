@@ -135,7 +135,7 @@ function procesarRegistro(evento) {
 
   const formularioValido = nombreValido && emailValido && comentarioValido
   if (!formularioValido) { 
-    mensajeExito.textContent = "Revisa los campos marcados."; 
+    mensajeContacto.textContent = "Revisa los campos marcados."; 
     return; 
   }
 
