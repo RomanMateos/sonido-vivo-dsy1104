@@ -249,63 +249,6 @@
 
 //Proceso de registro de formulario
 const formulario = document.querySelector("#formulario-registro");
-/*
-function procesarRegistro(evento) { 
-  evento.preventDefault();
-  //Lee entradas
-  const valorNombre = nombre.value.trim();
-  const valorApellidos = apellidos.value.trim();
-  const valorRut = rut.value.trim();
-  const valorEmail = email.value.trim().toLowerCase();
-  const valorRegion = regionSelect.value;
-  const valorComuna = comunaSelect.value;
-  const valorCalle = calle.value.trim();
-  const valorPassword = password.value.trim();
-  
-  console.log("Intento de registro controlado");
-  //Aplica validaciones
-  const nombreValido = validarNombre(valorNombre);
-  const apellidosValido = validarApellidos(valorApellidos);
-  const rutValido = validarRut(valorRut);
-  const emailValido = validarEmail(valorEmail);
-  const regionValido = validarRegion();
-  const comunaValido = validarComuna();
-  const calleValido = validarCalle(valorCalle);
-  const passwordValido = validarPassword(valorPassword);
-
-  const formularioValido = nombreValido && apellidosValido && emailValido && rutValido && regionValido && comunaValido && calleValido && passwordValido;
-  
-  if (!formularioValido) { 
-  mensajeExito.textContent = "Revisa los campos marcados."; 
-  return; 
-  }
-
-  // Crear objeto usuario
-  const nuevoUsuario = {
-    nombre: valorNombre,
-    apellidos: valorApellidos,
-    rut: valorRut.toUpperCase(),
-    email: valorEmail,
-    region: valorRegion,
-    comuna: valorComuna,
-    calle: valorCalle,
-    password: valorPassword
-  };
-
-  // Guardar en localStorage
-  /*Los datos del formulario se convierten en un JSON para poder guardarse,
-  y luego se convierten en un objeto para poder ser leídos.
-  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-  usuarios.push(nuevoUsuario);
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-  mensajeExito.textContent = "Registro guardado con éxito.";
-  console.log("Usuarios registrados:", usuarios);
-
-  mensajeExito.textContent = "Registro válido.";
-  formulario.reset(); 
-}
-*/
 
 function procesarRegistro(evento) { 
   evento.preventDefault();
@@ -364,12 +307,13 @@ function procesarRegistro(evento) {
   usuarios.push(nuevoUsuario);
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-  mensajeExito.textContent = "Registro válido. Bienvenido a Sonido Vivo.";
+  mensajeExito.textContent = "Registro válido. ¡Bienvenid@ a Sonido Vivo!";
   console.log("Usuarios registrados:", usuarios);
 
   formulario.reset(); 
 }
 
+//Listener del botón para enviar el formulario
 formulario.addEventListener("submit", procesarRegistro);
 
 //Obtención de datos del último usuario registrado
@@ -378,7 +322,7 @@ const registroGuardado = localStorage.getItem("usuarios");
 if (registroGuardado !== null) { 
   const registro = JSON.parse(registroGuardado); 
   const ultimoUsuario = registro[registro.length - 1]; 
-  mensajeExito.textContent = `Último registro: ${ultimoUsuario.nombre}`; 
+  mensajeExito.textContent = `Último usuario registrado: ${ultimoUsuario.nombre}`; 
 }
 
 //Validación de Login
@@ -393,7 +337,7 @@ if (registroGuardado !== null) {
   //Guardado de datos de formulario en arreglo
 
 //Regiones y Comunas
-  // Select: regiones y comunas
+  //Colección: regiones y comunas
   const regionesYComunas = {
     "Arica y Parinacota": ["Arica", "Camarones", "Putre", "General Lagos"],
     "Tarapacá": ["Iquique", "Alto Hospicio", "Pozo Almonte", "Camiña", "Colchane", "Huara", "Pica"],
@@ -413,7 +357,7 @@ if (registroGuardado !== null) {
     "Magallanes": ["Punta Arenas", "Laguna Blanca", "Río Verde", "San Gregorio", "Cabo de Hornos", "Antártica", "Porvenir", "Primavera", "Timaukel", "Natales", "Torres del Paine"]
   };
 
-  // Poblar regiones al cargar la página
+  //Poblado de regiones al cargar la página
   function cargarRegiones() {
     Object.keys(regionesYComunas).forEach(region => {
       const option = document.createElement("option");
@@ -423,7 +367,7 @@ if (registroGuardado !== null) {
     });
   }
 
-  // Poblar comunas según región seleccionada
+  //Poblado de comunas según región seleccionada
   function cargarComunas(region) {
     // Limpiar comunas previas
     comunaSelect.innerHTML = "<option value=''>Seleccione comuna</option>";
@@ -438,10 +382,10 @@ if (registroGuardado !== null) {
     }
   }
 
-  // Listener: cuando cambia la región
+  //Listener: cuando cambia la región, despliega las comunas que les corresponden según la colección
   regionSelect.addEventListener("change", function () {
     cargarComunas(regionSelect.value);
   });
 
-  // Inicializar
+  //Cargado inicial de regiones
   cargarRegiones();
