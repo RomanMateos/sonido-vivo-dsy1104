@@ -227,11 +227,11 @@
   //Password
   function validarPassword(valor) { 
   limpiarError(password, "error-password"); 
-    if (valor.length != 8) { 
+    if (valor.length < 4 || valor.length > 10) { 
       mostrarError( 
         password, 
         "error-password", 
-        "La contraseña debe contener 8 caracteres." 
+        "La contraseña debe contener entre 4 y 10 caracteres." 
       ); 
       return false; 
     } 
