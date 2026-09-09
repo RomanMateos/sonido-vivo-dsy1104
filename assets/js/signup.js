@@ -212,7 +212,11 @@
     if (!dominioPermitido) { 
     mostrarError(email, "error-email", "Utiliza un dominio válido: @duoc.cl, @profesor.duoc.cl o @gmail.com"); 
     return false; 
-    } 
+    }
+    if (valor.length > 100) { 
+      mostrarError(email, "error-email", "Máximo 100 caracteres."); 
+      return false; 
+    }
     return true; 
     }
       //Blur e input email
@@ -324,10 +328,6 @@ if (registroGuardado !== null) {
   const ultimoUsuario = registro[registro.length - 1]; 
   mensajeExito.textContent = `Último usuario registrado: ${ultimoUsuario.nombre}`; 
 }
-
-//CONTACTO.HTML - Validación de formulario de Contacto
-
-
 
 //APÉNDICES
 //Regiones y Comunas
