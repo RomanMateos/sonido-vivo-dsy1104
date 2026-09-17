@@ -38,6 +38,9 @@ function agregarAlCarrito(codigo) {
   }
  
   localStorage.setItem("carrito", JSON.stringify(carrito));
-  alert(producto.nombre + " agregado al carrito");
-}
  
+  const mensajeCarrito = document.querySelector("#mensaje-carrito");
+  if (mensajeCarrito !== null) {
+    mensajeCarrito.textContent = producto.nombre + " agregado al carrito";
+  }
+}

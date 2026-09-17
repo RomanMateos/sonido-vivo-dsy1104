@@ -1,7 +1,5 @@
-const parametros = new URLSearchParams(window.location.search);
-const codigoBuscado = parametros.get("codigo");
 const contenedorDetalle = document.querySelector("#contenedor-detalle");
- 
+const codigoBuscado = localStorage.getItem("productoSeleccionado");
 const producto = buscarProducto(codigoBuscado);
  
 if (producto === null) {
@@ -15,7 +13,7 @@ if (producto === null) {
   const imagen = document.createElement("img");
   imagen.src = producto.imagen;
   imagen.alt = producto.nombre;
-  imagen.style.maxWidth = "300px";
+  imagen.classList.add("img-detalle");
   imagen.onerror = function () {
     imagen.src = "https://placehold.co/300x220?text=Sin+imagen";
   };
