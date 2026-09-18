@@ -5,7 +5,10 @@ for (const producto of productos) {
   tarjeta.classList.add("producto-card");
  
   const enlace = document.createElement("a");
-  enlace.href = "detalle-producto.html?codigo=" + producto.codigo;
+  enlace.href = "detalle-producto.html";
+  enlace.addEventListener("click", function () {
+    localStorage.setItem("productoSeleccionado", producto.codigo);
+  });
  
   const imagen = document.createElement("img");
   imagen.src = producto.imagen;
@@ -37,4 +40,3 @@ for (const producto of productos) {
  
   contenedorProductos.appendChild(tarjeta);
 }
- 
